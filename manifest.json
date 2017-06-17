@@ -1,0 +1,31 @@
+{
+  "name": "Brock Decoder",
+  "short_name": "Decode the Brock Blog",
+  "description": "Tool for revealing features on brockhalladay.wordpress.com blog in WordPress",
+  "manifest_version":2,
+  "version": "0.1.0",
+  "content_security_policy":"script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+  "icons": {
+    "32": "icons/flying.png"
+  },
+  "permissions":[ "tabs","activeTab","storage","declarativeContent"],
+  "page_action":{
+    "default_title":"Brock Your World",
+    "default_icon":"flying.png",
+    "default_popup":"main.html"
+  },
+  "web_accessible_resources":[
+    "js/*",
+    "css/*"
+  ],
+  "background":{
+    "page":"html/background.html",
+    "persistent":false
+  },
+  "content_scripts":[
+    {
+      "matches":["https://brockhalladay.wordpress.com/*"],
+      "js":["lib/jquery.min.js", "js/test.js"]
+    }
+  ]
+}
