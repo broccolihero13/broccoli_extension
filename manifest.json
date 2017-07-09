@@ -6,13 +6,15 @@
   "version": "0.1.0",
   "content_security_policy":"script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
   "icons": {
-    "32": "icons/flying.png"
+    "48": "icons/lg_flying.png",
+    "32": "icons/flying.png",
+    "16": "icons/sm_flying.png"
   },
   "permissions":[ "tabs","activeTab","storage","declarativeContent"],
   "page_action":{
     "default_title":"Brock Your World",
-    "default_icon":"flying.png",
-    "default_popup":"main.html"
+    "default_icon":"icons/lg_flying.png",
+    "default_popup":"page_actions.html"
   },
   "web_accessible_resources":[
     "js/*",
@@ -26,6 +28,10 @@
     {
       "matches":["https://brockhalladay.wordpress.com/*"],
       "js":["lib/jquery.min.js", "js/test.js"]
+    },
+    {
+      "matches":["https://bhalladay.instructure.com/*"],
+      "js":["js/test.js"]
     }
   ]
 }
